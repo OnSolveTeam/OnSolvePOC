@@ -1,11 +1,12 @@
 
-#div1{
-    float: left;
-    margin-left: 20px;
-}
-
 input{
     float:left;
     width:150px;
     margin-bottom:10px; /*or whatever you want the spacing to be*/
+    }
+    #submitButton{
+        margin-bottom:10px; 
+    }
+    label{
+        float: right;
     }

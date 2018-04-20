@@ -1,4 +1,5 @@
 import React from 'react'
+import './todos-list-item.css'
 
 export default class TodosListItem  extends React.Component{
     constructor(props){
@@ -10,17 +11,17 @@ export default class TodosListItem  extends React.Component{
 renderActioonsSections(){
     if(this.state.isEditing)
     {
-        return(
+        return(           
             <td>
-            <button className="btn btn-warning">Save</button>
-            <button className="btn btn-warning" onClick={this.onCancelClick.bind(this)}>Cancel</button>
-            </td>
+            <button className="btn btn-warning btn btn-sm">Save</button>            
+            <button className="btn btn-warning btn btn-sm" onClick={this.onCancelClick.bind(this)}>Cancel</button>        
+            </td>            
         );
     }
     return( 
         <td>
-        <button className="btn btn-success" onClick={this.onEditClick.bind(this)}>Edit</button>
-        <button className="btn btn-success">Delete</button>
+        <button className="btn btn-danger btn btn-sm" onClick={this.onEditClick.bind(this)}>Edit</button>
+        <button className="btn btn-danger btn btn-sm">Delete</button>
         </td>
     );
 }

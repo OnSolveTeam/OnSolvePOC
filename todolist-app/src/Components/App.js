@@ -25,14 +25,17 @@ render(){
   return(
     <div>
       <h1>React TODOS App</h1>
+      <CreateTodo createTask={(title,date) => this.createTask(title,date)}/>
       <TodosList todos={this.state.todos}/>
     </div>  
   );
 }
-createTask(title,dateandTime){
+createTask(Title,date){
+  console.log(Title)
+  console.log(date)
 this.state.todos.push({
-  title,
-  dateandTime
+  Title,
+  date
 });
 this.setState({
  todos:  this.state.todos

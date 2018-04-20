@@ -6,16 +6,36 @@ export default class TodosList extends React.Component{
     // constructor(){
     //     super();       
     // }
+    componentWillMount(){
+        this.setState({
+            todos: this.props.todos
+        })
+    }
+
+    componentWillReceiveProps()
+    {
+        this.setState({
+            todos: this.props.todos
+        })
+    }
+
+    componentWillUpdate()
+    {
+
+    }
+
     renderItems(){
+        console.log(this.state.todos);
         return(
         //    _.map(this.props.todos), (todo,index)=> <TodosListItem key={index} task={todo.task}/>
-           this.props.todos.map((item,index) => <TodosListItem key={index}  title={item.Title} 
+           this.state.todos.map((item,index) => <TodosListItem key={index}  title={item.Title} 
            date={item.DateandTime}/>)
         );
     }
 
-    render(){    
-    return(
+
+    render(){  
+    return(        
         <div className="container">
         <table className="table table-striped">
         <TodosListHeader/>
