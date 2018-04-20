@@ -2,6 +2,7 @@
 import React from 'react'
 import TodosListHeader from './todos-List-Header'
 import TodosListItem from './todos-list-item';
+import './TodosList.css'
 export default class TodosList extends React.Component{
     // constructor(){
     //     super();       
@@ -36,8 +37,8 @@ export default class TodosList extends React.Component{
 
     render(){  
     return(        
-        <div className="container">
-        <table className="table table-striped">
+        <div className="container my-div">
+        <table className="table table-dark table-striped ">
         <TodosListHeader/>
         <tbody>
            {this.renderItems()}

@@ -10,3 +10,7 @@ input{
     label{
         float: right;
     }
+
+    form{
+        margin-top: 40px;
+    }

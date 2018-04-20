@@ -1,14 +1,13 @@
 import React,{Component} from 'react'
 import './create-todo.css'
-import Calender from './Calender'
-import DatePicker from 'react-datepicker';
+// import Calender from './Calender'
+// import DatePicker from 'react-datepicker';
 
 
 export default class CreateTodo extends Component{
     render(){
         return(
             <form onSubmit={this.handleCreate.bind(this)}>
-            
             <div className="container">
             <div className="row">
             <div className="col-md-2">  
@@ -22,7 +21,7 @@ export default class CreateTodo extends Component{
             <label>Date :</label> 
             </div>            
             <div className="col-md-2">
-            <Calender ref="createInputOfDate"/>
+            <input type="text" placeholder="Date" ref="createInputOfDate"/> 
             
             </div>
             <div className="col-md-4">            
@@ -37,6 +36,8 @@ export default class CreateTodo extends Component{
 
     handleCreate(event){
 event.preventDefault();
-this.props.createTask(this.refs.createInputOfTitle.value,"12/12/1001");
+this.props.createTask(this.refs.createInputOfTitle.value,this.refs.createInputOfDate.value);
+this.refs.createInputOfTitle.value=''
+this.refs.createInputOfDate.value=''
     }
 }

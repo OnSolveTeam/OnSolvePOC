@@ -2,15 +2,14 @@ import React, { Component } from 'react';
 import TodosList from './TodosList'
 import CreateTodo from './create-todo'
 
-
 const todos=[
   {
     Title: 'Make React Tutorial',
-    DateandTime:'hghh'
+    DateandTime:'20/04/2018'
   },
   {
     Title:'Lunch',
-    DateandTime:'new Date()'
+    DateandTime:'20/04/2018'
   }
 ];
 
@@ -24,18 +23,15 @@ class App extends Component{
 render(){
   return(
     <div>
-      <h1>React TODOS App</h1>
       <CreateTodo createTask={(title,date) => this.createTask(title,date)}/>
       <TodosList todos={this.state.todos}/>
     </div>  
   );
 }
-createTask(Title,date){
-  console.log(Title)
-  console.log(date)
+createTask(Title,DateandTime){
 this.state.todos.push({
   Title,
-  date
+  DateandTime
 });
 this.setState({
  todos:  this.state.todos
